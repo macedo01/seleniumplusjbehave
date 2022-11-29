@@ -1,0 +1,55 @@
+<html>
+
+<head>
+
+<script type="text/javascript">
+	function realizarCalculo() {
+		var tipoAreaSelecionada = recuperarTipoAreaSelecionada();
+		if (tipoAreaSelecionada === "Retângulo") {
+			area.value = base.value * altura.value;
+		} else if (tipoAreaSelecionada === "Triângulo") {
+			area.value = base.value * altura.value / 2;
+		} else {
+			alert("Funcionalidade não implementada");
+		}
+	}
+	function recuperarTipoAreaSelecionada() {
+		var tipoAreaSelect = document.getElementById("tipoAreaSelect");
+		return tipoAreaSelect.options[tipoAreaSelect.selectedIndex].text;
+	}
+</script>
+
+</head>
+<body>
+	<form>
+
+		<table border=1>
+			<tr>
+				<td>Tipo de área:</td>
+				<td><select id="tipoAreaSelect">
+						<option>(Selecione)</option>
+						<option>Retângulo</option>
+						<option>Triângulo</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Base:</td>
+				<td><input id="base" /></td>
+			</tr>
+			<tr>
+				<td>Altura:</td>
+				<td><input id="altura" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input id="calcularBtn" type="button"
+					value="Calcular" style="width: 100%" onClick="realizarCalculo();" /></td>
+			</tr>
+			<tr>
+				<td>Área:</td>
+				<td><input id="area" /></td>
+			</tr>
+		</table>
+
+	</form>
+</body>
+</html>
