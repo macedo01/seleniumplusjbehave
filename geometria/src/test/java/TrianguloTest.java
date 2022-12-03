@@ -14,18 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
-public class TrianguloTest extends JUnitStories {
-
-    @Override
-    public Configuration configuration() {
-        Keywords keywords = new LocalizedKeywords(new Locale("pt"));
-        return new MostUsefulConfiguration()
-                .useKeywords(keywords)
-                .useStoryReporterBuilder(new StoryReporterBuilder()
-                        .withDefaultFormats().withFormats(Format.CONSOLE,
-                                Format.TXT, Format.HTML));
-    }
-
+public class TrianguloTest extends JbehaveAbstract {
     @Override
     public InjectableStepsFactory stepsFactory() {
         return new InstanceStepsFactory(configuration(), new TrianguloSteps());
@@ -41,6 +30,5 @@ public class TrianguloTest extends JUnitStories {
         EmbedderControls embedderControls = configuredEmbedder().embedderControls();
         embedderControls.useStoryTimeouts("6000");
     }
-
 
 }

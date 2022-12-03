@@ -16,7 +16,7 @@ public class TrianguloSteps {
     public void instanciarSeleniumWebDriver() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get(String.valueOf(SeleniumTest.class.getResource("/webapp/area.html")));
+        driver.get(String.valueOf(TrianguloSteps.class.getResource("/webapp/area.html")));
     }
 
     @When("seleciono o tipo de area do $tipoDeArea")
