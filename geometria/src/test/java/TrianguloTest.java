@@ -10,11 +10,9 @@ import org.jbehave.core.reporters.Format;
 import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-
 
 public class TrianguloTest extends JUnitStories {
 
@@ -36,7 +34,7 @@ public class TrianguloTest extends JUnitStories {
     @Override
     public List<String> storyPaths() {
         return new StoryFinder().findPaths(CodeLocations.codeLocationFromClass(this.getClass()),
-                Arrays.asList("**/*.story"), Arrays.asList(""));
+                Arrays.asList("triangulo-steps.story"), Arrays.asList(""));
     }
 
     public TrianguloTest() {

@@ -13,7 +13,7 @@ class SeleniumTest {
     private WebDriver driver;
 
     @BeforeAll
-    void setup(){
+    void setupClass(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
     }
